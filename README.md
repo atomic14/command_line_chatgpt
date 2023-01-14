@@ -2,6 +2,10 @@
 
 This is a simple chat bot that uses the OpenAI apis to create a ChatGPT equivalent.
 
+You can watch a great video walkthrough [here](https://youtu.be/jQFhtFMDz1s).
+
+[![Walkthrough Video](https://img.youtube.com/vi/jQFhtFMDz1s/0.jpg)](https://youtu.be/jQFhtFMDz1s)
+
 # Setup
 
 Make sure you have python3 installed:
