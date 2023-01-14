@@ -37,7 +37,7 @@ def get_response(prompt):
         max_tokens=MAX_TOKENS,
         top_p=1,
         frequency_penalty=FREQUENCY_PENALTY,
-        presence_penalty=MAX_CONTEXT_WORDS,
+        presence_penalty=PRESENCE_PENALTY,
     )
     return response.choices[0].text
 
