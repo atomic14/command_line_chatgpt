@@ -74,6 +74,7 @@ def get_moderation(question):
 
 
 def main():
+    os.system("cls" if os.name == "nt" else "clear")
     # keep track of previous questions and answers
     previous_questions_and_answers = []
     while True:
