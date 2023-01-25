@@ -59,7 +59,16 @@ Format any lists on individual lines with a dash and a space in front of each it
 
 To run just do the following:
 
+### Linux/Mac:
+
 ```
 . ./venv/bin/activate
+python main.py
+```
+
+### Windows:
+
+```
+venv\Scripts\activate.bat
 python main.py
 ```
