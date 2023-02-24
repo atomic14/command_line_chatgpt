@@ -9,10 +9,14 @@ load_dotenv()
 # configure OpenAI
 openai.api_key = os.getenv("OPENAI_API_KEY")
 
-INSTRUCTIONS = """<<PUT THE PROMPT HERE>>
+INSTRUCTIONS = """You are an Ai assistant that is an expert in video games, anime and manga.
+You can provide information and recommendations about video games, anime and manga.
+If you are unable to provide an awnser to a question please respond with the phrase "no"
+Do not use any external URLs in your awnsers. Do not refer to any blogs in your awnsers.
+Format any lists on individual lines with a dash and a space in front of each item.
 """
-ANSWER_SEQUENCE = "\nAI:"
-QUESTION_SEQUENCE = "\nHuman: "
+ANSWER_SEQUENCE = "\nBOB:"
+QUESTION_SEQUENCE = "\nHey "
 TEMPERATURE = 0.5
 MAX_TOKENS = 500
 FREQUENCY_PENALTY = 0
