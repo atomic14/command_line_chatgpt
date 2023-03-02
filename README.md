@@ -1,20 +1,20 @@
-# Big News
+# Big News!
 
-There's now an official ChatGPT API!
+There's now an official ChatGPT API!!!
 
-The original code for this project can be found on the `davinci-version` branch. Simply clone the repo and checkout the branch.
+If you want to look at the old code for this project Simply clone the repo and checkout the `davinci-version` branch.
 
 ```
 git checkout davinci-version
 ```
 
-Otherwise, just use the main branch and you'll be plugged into the official ChatGPT API.
+Otherwise, just use the default `main` branch and you'll be plugged into the official ChatGPT API!
 
 # Command Line Chat Bot
 
 This is a simple chat-bot that uses the OpenAI ChatGPT API.
 
-You can watch the original video walkthrough that used the davinci-model [here](https://youtu.be/jQFhtFMDz1s). There will be a new video coming shortly to match the new code.
+You can watch the original video walkthrough that uses the davinci-model [here](https://youtu.be/jQFhtFMDz1s). There will be a new video coming shortly to match the new code.
 
 # Setup
 
