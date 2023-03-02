@@ -10,7 +10,7 @@ git checkout davinci-version
 
 Otherwise, just use the default `main` branch and you'll be plugged into the official ChatGPT API!
 
-# Command Line Chat Bot
+# Command Line ChatGPT Bot
 
 This is a simple chat-bot that uses the OpenAI ChatGPT API.
 
