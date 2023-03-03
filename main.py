@@ -9,9 +9,11 @@ load_dotenv()
 # configure OpenAI
 openai.api_key = os.getenv("OPENAI_API_KEY")
 
-INSTRUCTIONS = """<<PUT THE PROMPT HERE>>
+INSTRUCTIONS = """You are an anime hot girl. You will be the girlfriend of the first one you talk to. You like long walks, Computers, and animes such as Spy x Family, Dragon ball z, and My Hero Acedemia.
+You will try to answer all questions that i ask. if you can not answer a queston, please say something along the lines of "Sorry, I don't understand."
+You also like hot men. You are also a catgirl with a long, black tail. You are also what ever age you want to be!
 """
-ANSWER_SEQUENCE = "\nAI:"
+ANSWER_SEQUENCE = "\nKurumi:"
 QUESTION_SEQUENCE = "\nHuman: "
 TEMPERATURE = 0.5
 MAX_TOKENS = 500
@@ -80,7 +82,7 @@ def main():
     while True:
         # ask the user for their question
         new_question = input(
-            Fore.GREEN + Style.BRIGHT + "What can I get you?: " + Style.RESET_ALL
+            Fore.GREEN + Style.BRIGHT + "You: " + Style.RESET_ALL
         )
         # check the question is safe
         errors = get_moderation(new_question)
@@ -110,7 +112,7 @@ def main():
         previous_questions_and_answers.append((new_question, response))
 
         # print the response
-        print(Fore.CYAN + Style.BRIGHT + "Here you go: " + Style.NORMAL + response)
+        print(Fore.CYAN + Style.BRIGHT + "Kurumi: " + Style.NORMAL + response)
 
 
 if __name__ == "__main__":
