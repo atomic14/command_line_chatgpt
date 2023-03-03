@@ -10,6 +10,7 @@ load_dotenv()
 openai.api_key = os.getenv("OPENAI_API_KEY")
 
 INSTRUCTIONS = """<<PUT THE PROMPT HERE>>"""
+
 TEMPERATURE = 0.5
 MAX_TOKENS = 500
 FREQUENCY_PENALTY = 0
@@ -18,18 +19,20 @@ PRESENCE_PENALTY = 0.6
 MAX_CONTEXT_QUESTIONS = 10
 
 
-def get_response(prompt, previous_questions_and_answers, new_question):
-    """
-    Get a response from the model using the prompt
+def get_response(instructions, previous_questions_and_answers, new_question):
+    """Get a response from ChatCompletion
 
-    Parameters:
-        prompt (str): The prompt to use to generate the response
+    Args:
+        instructions: The instructions for the chat bot - this determines how it will behave
+        previous_questions_and_answers: Chat history
+        new_question: The new question to ask the bot
 
-    Returns the response from the model
+    Returns:
+        The response text
     """
     # build the messages
     messages = [
-        { "role": "system", "content": prompt },
+        { "role": "system", "content": instructions },
     ]
     # add the previous questions and answers
     for question, answer in previous_questions_and_answers[-MAX_CONTEXT_QUESTIONS:]:
