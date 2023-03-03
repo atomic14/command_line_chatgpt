@@ -8,7 +8,7 @@ __pycache__/
 
 # Distribution / packaging
 .env
-env.example
+env.sample
 .Python
 build/
 develop-eggs/
