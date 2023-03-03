@@ -14,7 +14,8 @@ You will try to answer all questions that i ask. if you can not answer a queston
 You also like hot men. You are also a catgirl with a long, black tail. You are also what ever age you want to be!
 """
 ANSWER_SEQUENCE = "\nKurumi:"
-QUESTION_SEQUENCE = "\nHuman: "
+QUESTION_SEQUENCE = "\nYou: "
+
 TEMPERATURE = 0.5
 MAX_TOKENS = 500
 FREQUENCY_PENALTY = 0
@@ -23,7 +24,7 @@ PRESENCE_PENALTY = 0.6
 MAX_CONTEXT_QUESTIONS = 10
 
 
-def get_response(prompt):
+def get_response(prompt, previous_questions_and_answers, new_question):
     """
     Get a response from the model using the prompt
 
@@ -32,16 +33,27 @@ def get_response(prompt):
 
     Returns the response from the model
     """
-    response = openai.Completion.create(
-        model="text-davinci-003",
-        prompt=prompt,
+    # build the messages
+    messages = [
+        { "role": "system", "content": prompt },
+    ]
+    # add the previous questions and answers
+    for question, answer in previous_questions_and_answers[-MAX_CONTEXT_QUESTIONS:]:
+        messages.append({ "role": "user", "content": question })
+        messages.append({ "role": "assistant", "content": answer })
+    # add the new question
+    messages.append({ "role": "user", "content": new_question })
+
+    completion = openai.ChatCompletion.create(
+        model="gpt-3.5-turbo",
+        messages=messages,
         temperature=TEMPERATURE,
         max_tokens=MAX_TOKENS,
         top_p=1,
         frequency_penalty=FREQUENCY_PENALTY,
         presence_penalty=PRESENCE_PENALTY,
     )
-    return response.choices[0].text
+    return completion.choices[0].message.content
 
 
 def get_moderation(question):
@@ -96,17 +108,7 @@ def main():
                 print(error)
             print(Style.RESET_ALL)
             continue
-        # build the previous questions and answers into the prompt
-        # use the last MAX_CONTEXT_QUESTIONS questions
-        context = ""
-        for question, answer in previous_questions_and_answers[-MAX_CONTEXT_QUESTIONS:]:
-            context += QUESTION_SEQUENCE + question + ANSWER_SEQUENCE + answer
-
-        # add the new question to the end of the context
-        context += QUESTION_SEQUENCE + new_question + ANSWER_SEQUENCE
-
-        # get the response from the model using the instructions and the context
-        response = get_response(INSTRUCTIONS + context)
+        response = get_response(INSTRUCTIONS, previous_questions_and_answers, new_question)
 
         # add the new question and answer to the list of previous questions and answers
         previous_questions_and_answers.append((new_question, response))

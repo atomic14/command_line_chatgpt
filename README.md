@@ -1,10 +1,20 @@
-# Command Line Chat Bot
+# Big News!
 
-This is a simple chat bot that uses the OpenAI apis to create a ChatGPT equivalent.
+There's now an official ChatGPT API!!!
 
-You can watch a great video walkthrough [here](https://youtu.be/jQFhtFMDz1s).
+If you want to look at the old code for this project Simply clone the repo and checkout the `davinci-version` branch.
 
-[![Walkthrough Video](https://img.youtube.com/vi/jQFhtFMDz1s/0.jpg)](https://youtu.be/jQFhtFMDz1s)
+```
+git checkout davinci-version
+```
+
+Otherwise, just use the default `main` branch and you'll be plugged into the official ChatGPT API!
+
+# Command Line ChatGPT Bot
+
+This is a simple chat-bot that uses the OpenAI ChatGPT API.
+
+You can watch the original video walkthrough that uses the davinci-model [here](https://youtu.be/jQFhtFMDz1s). There will be a new video coming shortly to match the new code.
 
 # Setup
 
