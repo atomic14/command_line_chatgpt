@@ -2,6 +2,10 @@
 
 There's now an official ChatGPT API!!!
 
+Watch the walk-through video for this repo here:
+
+[![ChatGPT API Walkthrough](https://img.youtube.com/vi/k-ieXU3apBY/0.jpg)](https://youtu.be/k-ieXU3apBY)
+
 If you want to look at the old code for this project Simply clone the repo and checkout the `davinci-version` branch.
 
 ```
